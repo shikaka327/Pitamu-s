@@ -1,0 +1,165 @@
+.video {
+    text-align: center;
+    overflow: hidden;
+    margin: 0px 0px 10px 0;
+}
+
+.video-main {
+    width: 70%;
+    height: auto;
+    max-width: 100%;
+    min-width: 500px;
+    /*margin: 100px 100px 100px 100px;*/
+}
+
+.concept .concept-sentence p {
+    text-align: center;
+    font-size: 20px;
+    margin: 100px 0;
+    padding-bottom: 50px;
+}
+
+.concept .concept-sentence br {
+    display: block;
+    content: "";
+    margin: 20px 0;
+}
+
+.flow {
+    display: block;
+    background-color: black;
+}
+
+.flow h2 {
+    display: block;
+    color: white;
+    padding-top: 100px;
+}
+
+.flow .flow-img p {
+    color: white;
+    font-size: 25px;
+    margin: 30px;
+    padding: 30px 0;
+}
+
+.flow .flow-img {
+    display: block;
+    text-align: center;
+    margin-bottom: 150px;
+    padding-bottom: 30px;
+}
+
+.flow-img video {
+    text-align: center;
+    width: 50%;
+    height: auto;
+}
+
+.flow-img {
+    position: relative;
+}
+
+.infographics {
+    height: 10%;
+    width: auto;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+}
+
+.member {
+    display: block;
+    text-align: center;
+    margin-bottom: 100px;
+    background-color: black;
+}
+
+.member h2 {
+    color: white;
+    padding-top: 100px;
+    margin-bottom: 100px;
+}
+
+.member-description p {
+    color: white;
+    padding-bottom: 50px;
+}
+
+
+/*フッター*/
+
+.fotter {
+    display: block;
+}
+
+.fotter p ul {
+    text-align: center;
+}
+
+.follow-me {
+    text-align: center;
+    list-style: none;
+    margin: 100px 0 50px;
+    overflow: hidden;
+    padding: 0;
+}
+
+.follow-me li {
+    display: inline-block;
+    text-align: center;
+    margin: 0 8px 8px 0;
+    padding: 0;
+}
+
+.follow-me li a::before {
+    background-color: #eee;
+    -webkit-border-radius: 2px;
+    border-radius: 50%;
+    color: #333;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 16px;
+    height: 44px;
+    /* Button height */
+    line-height: 44px;
+    /* Button height */
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+    text-align: center;
+    width: 44px;
+    /* Button width */
+}
+
+.follow-me li a:hover::before {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/*
+.follow-me li a[href*="facebook.com"]::before {
+    content: "\f09a";
+}*/
+
+.follow-me li a[href*="instagram.com"]::before {
+    content: "\f16d";
+}
+
+.follow-me li a[href*="twitter.com"]::before {
+    content: "\f099";
+}
+
+.follow-me li a[href*="youtube.com"]::before {
+    content: "\f16a";
+}
+
+.last p {
+    display: block;
+    text-align: center;
+    margin-bottom: 50px;
+}
