@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pitamu-s</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://use.typekit.net/ncj2tiy.css">
+    <link rel="stylesheet" href="./css/slick.min.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="./css/swiper.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<script src="./js/swiper.min.js"></script>
+<script src="./js/index.js"></script>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>
+                    <a href="index.html">Pitamu-s
+                    </a>
+                </h1>
+            </div>
+
+            <div class="menu">
+                <div class="bar bar1"></div>
+                <div class="bar bar2"></div>
+                <div class="bar bar3"></div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">TOP</a></li>
+                <li><a href="#concept">CONCEPT</a></li>
+                <li><a href="#infographics">INFOGRAPHICS</a></li>
+                <li><a href="#member">MEMBER</a></li>
+            </ul>
+
+        </nav>
+    </header>
+
+    <main>
+        <div class="head">
+            <div class="video">
+                <video preload="auto" controls playsinline src="./media/index/情報表現基礎3_完成.mp4" class="video-main"></video>
+            </div>
+        </div>
+        <div class="concept">
+            <h2 id="concept">concept</h2>
+            <div class="concept-sentence">
+                <p>コロナ禍でリモートで人と接することが多くなった今日。
+                    <br> 「遠く離れた人同士で、一つのものを作りあげる楽しさを探究してみる。」
+                    <br> ということを目的に制作しました。
+                    <br> ”別々のものを一つに合わせる”から発想し、音楽をテーマに選びました。
+                    <br> 楽器に模したピタゴラ装置で、あたかも音楽を作り上げているように
+                    <br> 見せるコンテンツを目指しました。
+                </p>
+            </div>
+        </div>
+
+        <div class="flow">
+            <h2>flow</h2>
+            <div class="flow-img">
+                <!--<img src="./media/index/情報表現基礎3_ピタゴラ_長方形.png" alt="図解">-->
+                <video loop autoplay muted playsinline id="video" onclick="video_pause()">
+                    <source src="./media/index/flow_1_re.mp4" type="video/mp4" />
+                    <img src="flow_1.jpg" />
+                </video>
+                <div class="video-btn" id="video-btn"></div>
+                <p>ビー玉が装置上に設置された音（光で表現）を吸収する演出。</p>
+            </div>
+            <div class="flow-img">
+                <!--<img src="./media/index/情報表現基礎3_ピタゴラ_長方形.png" alt="図解">-->
+                <video loop autoplay muted playsinline id="video" nclick="video_pause()">
+                    <source src="./media/index/flow_2_re.mp4" type="video/mp4" />
+                    <img src="flow_2.jpg" />
+                </video>
+                <div class="video-btn" id="video-btn"></div>
+                <p>音を吸収したビー玉は中央の画面に入ります。</p>
+            </div>
+            <div class="flow-img">
+                <video loop autoplay muted playsinline id="video" nclick="video_pause()">
+                    <source src="./media/index/flow_3_re.mp4" type="video/mp4" />
+                    <img src="flow_3.jpg" />
+                </video>
+                <p>それぞれのピタゴラが作動することで
+                    <br> 中央に音が集まり、曲になります。
+                </p>
+            </div>
+        </div>
+
+
+        <div class="infographics">
+            <h2 id="infographics">infographics</h2>
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><video src="./media/index/info_1.mp4"></video></div>
+                    <div class="swiper-slide"><video src="./media/index/info_2.mp4"></video></div>
+                    <div class="swiper-slide"><video src="./media/index/info_3.mp4"></video></div>
+                    <div class="swiper-slide"><video src="./media/index/info_4.mp4"></video></div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <script src="./js/swiper.js"></script>
+            <script>
+                var swiper = new Swiper('.swiper-container', {
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                    direction: 'horizontal',
+                    loop: false,
+                    speed: 400,
+
+                    on: {
+                        //スライダー遷移時（ドキュメント内の全動画を一時停止にする）
+                        transitionStart: function() {
+
+                            var videos = document.querySelectorAll('video');
+
+                            Array.prototype.forEach.call(videos, function(video) {
+                                video.pause();
+                            });
+                        },
+                        //スライダー遷移完了後（アクティブスライドの動画を再生する）
+                        transitionEnd: function() {
+
+                            var activeIndex = this.activeIndex;
+                            var activeSlide = document.getElementsByClassName('swiper-slide')[activeIndex];
+                            var activeSlideVideo = activeSlide.getElementsByTagName('video')[0];
+                            activeSlideVideo.play();
+
+                        },
+                    },
+
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction: true
+                    },
+                    pagination: {
+                        el: '.swiper-pagination',
+                        type: 'bullets',
+                        clickable: true,
+                    },
+                });
+            </script>
+        </div>
+
+
+        <div class="member">
+            <h2 id="member">member</h2>
+            <ul class="member-description">
+                <li>
+                    <p>臼井 航　( Usui Wataru ) : インフォグラフィックス, 電子制御</p>
+
+                </li>
+                <li>
+                    <p>鹿島 志瑠　( Kashima Shiryu ) : Webサイト, 音楽制作, 映像編集</p>
+
+                </li>
+                <li>
+                    <p>寒河江 改　( Sagae Arata ) : ピタゴラ装置制作, 電子制御</p>
+                </li>
+                <li>
+                    <p>古市 駿　( Furuichi Shun ) : ピタゴラ装置制作, 電子制御</p>
+                </li>
+            </ul>
+        </div>
+
+    </main>
+    <footer>
+        <div class="footer">
+            <ul class="follow-me">
+                <li>
+                    <a href="https://twitter.com/hogehoge"></a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/hogehoge"></a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <div class="last">
+        <p>© 2021 group8</p>
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
